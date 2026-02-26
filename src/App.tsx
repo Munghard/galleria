@@ -18,12 +18,14 @@ function App() {
           Niklas Granqvist artwork for sale.
         </p>
       </div>
+      <div className='flex gap-2 justify-center'>
 
-      {years.map(y => {
-        return (
-          <button key={y} className='text-zinc-400' onClick={() => setYear(y)}>{y}</button>
-        )
-      })}
+        {years.map(y => {
+          return (
+            <button key={y} className='text-zinc-400 mt-2' onClick={() => setYear(y)}>{y}</button>
+          )
+        })}
+      </div>
 
       {filteredArtworks.map(a => {
         return (
