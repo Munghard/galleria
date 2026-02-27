@@ -1,9 +1,13 @@
+import type { HTMLAttributes } from "react";
 import type { Artwork } from "../artworks";
 
-export default function Entry({ id, title, year, description, price, imageUrl, available }: Artwork) {
+type EntryProps = Artwork & HTMLAttributes<HTMLDivElement>;
+
+export default function Entry({ id, title, year, description, price, imageUrl, available, ...rest }: EntryProps) {
+
     return (
         <>
-            <div className="bg-zinc-900 m-4 p-4" key={id}>
+            <div {...rest} className="bg-zinc-900 m-4 p-4" key={id}>
                 <img className="w-4xl mb-4" src={imageUrl} title={title} />
                 <div className="justify-center flex flex-row mb-4">
                     <h1 className="text-4xl! text-zinc-200">{title}</h1>
